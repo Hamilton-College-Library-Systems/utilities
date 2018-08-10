@@ -1,0 +1,1 @@
+"C:\Program Files\7-Zip\7z.exe" a *.zip -r -w"C:\temp\" -mem=AES256
