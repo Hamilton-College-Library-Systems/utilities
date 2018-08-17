@@ -18,9 +18,10 @@
 # HOME_DIR="/home2/lisham/diglib-15/LibSpace/drop-box/Ready-for-Peter/Prep-for-asana/Shakers/Shaker-visual/Shaker-albums/two-sided"
 # HOME_DIR="/home2/lisham/diglib-15/LibSpace/drop-box/Ready-for-Peter/Reid/Sedition-folder"
 # HOME_DIR="/home2/lisham/diglib-15/LibSpace/drop-box/Ready-for-Peter/Prep-for-Ingest/Jazz-Photographs/jaz-pho"
-HOME_DIR="/home2/lisham/diglib-15/dhiSpace/asa/phase4/images"
+# HOME_DIR="/home2/lisham/diglib-15/dhiSpace/asa/phase4/images"
+# HOME_DIR="/home2/lisham/diglib-15/LibSpace/drop-box/Ready-for-Peter/from-Marianita/Shaker-Manuscripts/OVERSIZE"
+HOME_DIR="/home2/lisham/diglib-15/LibSpace/drop-box/Ready-for-Peter/from-Marianita/Shaker-Manuscripts/Box-1"
 INPUT_DIR="$HOME_DIR/images"
-# INPUT_DIR="$HOME_DIR/Binder-s10"
 OUTPUT_DIR="$HOME_DIR/output"
 
 #echo 'HOME_DIR: ' $HOME_DIR
@@ -41,12 +42,12 @@ for f in ${srcdir}/*
 do
 # STORE THE OBJECT'S CORE NAME AS THE DESTINATION DIRECTORY NAME,
 # SKIPPING X PATH SEGMENTS FROM THE INPUT_DIR BY COUNTING SLASHES
-# FORMULA = (NO. OF SLASHED IN HOME_DIR + 3)
-   dstdir=$(echo $f | cut -f10 -d"/" | cut -f1 -d"_")
+# FORMULA = (NO. OF SLASHED IN HOME_DIR + 3); change on only the first -f value, leave the other as -f1
+   dstdir=$(echo $f | cut -f12 -d"/" | cut -f1 -d"_")
 
 # GET THE OBJECT'S FULL FILENAME
-# SKIPPING 11 PATH SEGMENTS FROM THE INPUT_DIR
-   filename=$(echo $f | cut -f10 -d"/")
+# SKIPPING x PATH SEGMENTS FROM THE INPUT_DIR
+   filename=$(echo $f | cut -f12 -d"/")
 
    echo '1 srcdir: ' $srcdir
    echo '2 dstdir: ' $dstdir
